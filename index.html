@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Desenho - Rick and Morty</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fonte Google Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="header-container">
+            <h1 class="logo">Multiverso <span>90s & 200s</span></h1>
+            <p class="subtitle">Catálogo Dinâmico de Personagens via API REST</p>
+        </div>
+    </header>
+
+    <!-- Seção de Filtros e Busca -->
+    <section class="filters-section">
+        <div class="filters-container">
+            <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Buscar personagem por nome..." 
+                autocomplete="off"
+            />
+            
+            <select id="status-select">
+                <option value="">Todos os Status</option>
+                <option value="alive">Vivo (Alive)</option>
+                <option value="dead">Morto (Dead)</option>
+                <option value="unknown">Desconhecido (Unknown)</option>
+            </select>
+            
+            <button id="btn-search">Buscar</button>
+        </div>
+    </section>
+
+    <!-- Container do Grid onde os CARDS serão injetados via JavaScript -->
+    <main class="main-container">
+        <div id="characters-grid" class="cards-grid">
+            <!-- Os cards serão criados dinamicamente via JS (document.createElement) -->
+        </div>
+        
+        <!-- Estado de Carregamento / Erro -->
+        <div id="loading" class="loading-spinner" style="display: none;">
+            Carregando dados da API...
+        </div>
+        <div id="no-results" class="no-results" style="display: none;">
+            Nenhum personagem encontrado com os filtros selecionados.
+        </div>
+    </main>
+
+    <!-- Paginação -->
+    <footer class="footer-pagination">
+        <button id="btn-prev" disabled>&larr; Anterior</button>
+        <span id="page-indicator">Página 1</span>
+        <button id="btn-next">Próxima &rarr;</button>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
